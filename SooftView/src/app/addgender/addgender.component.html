@@ -1,0 +1,24 @@
+<div class="container ">
+    <div class="abs-center">
+        <form id="formulario" class="border p-3 form">
+            <h2 class="center bg-cover tit">Agregar genero</h2>
+            <div class="form-group ">
+                <label for="text">Gnero</label>
+                <input type="text" #gender name="gender" id="username" placeholder="Nombre del genero" required class="form-control" (click)="HideMessage('error_username')">
+                <span class="red-text error_username"></span>
+            </div>
+            <span class="red-text">{{errorcreate}}</span>
+            <input type="button" value="Guardar" class="btnadd" (click)="CreateUser(gender.value)">
+            <input type="button" value="Cancelar" routerLink="/home" class="btncancel">
+            <br>
+            <div class="overlay" *ngIf="load">
+
+                <div class="spinner ">
+                    <h3>{{messegeexitos}}</h3>
+                    <img class="imgsp" src="../../assets/img/giphyloadinf.webp" />
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

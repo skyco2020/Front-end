@@ -1,0 +1,36 @@
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+span {
+    font-size: 1.7rem;
+}
+
+.form {
+    width: 450px;
+    top: -9em;
+    position: relative;
+    border-radius: 1.2em;
+}
+
+.btn {
+    background: #EF7F1A!important;
+    border: none;
+    height: 3rem;
+    color: #ffffff;
+    border-radius: .5rem;
+    margin-left: .7em;
+    width: 14em;
+    float: right;
+    border-radius: 0.3em!important;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+}

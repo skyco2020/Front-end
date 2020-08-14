@@ -1,0 +1,15 @@
+<input type="button" class="btnadd" value="Agregar generó" routerLink='/addgender'>
+<table mdbTable>
+    <thead class="thead">
+        <tr>
+            <th>Nombre </th>
+            <th>Fecha creation </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr mdbTableCol *ngFor="let el of singers">
+            <td>{{el.name}}</td>
+            <td>{{el.creationDate}}</td>
+        </tr>
+    </tbody>
+</table>

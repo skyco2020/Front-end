@@ -1,0 +1,52 @@
+<section class="back">
+    <nav class="navbar navbar-default navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-nav" href="/home">Sooft Prueba</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/listsinger'>Cantante</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/listsinger'>Canción</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/listgender'>Género</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/about'>Acerca de..</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" style="cursor:pointer;">
+                    <a class="nav-link" (click)="Logout()">Cerrar Sesion</a>
+                </li>
+            </ul>
+            </span>
+        </div>
+    </nav>
+</section>
+<br><br><br>
+<main>
+    <input type="button" class="btnadd" routerLink='/adduser' value="Agregar Usuario">
+    <table mdbTable>
+        <thead class="thead">
+            <tr>
+                <th>Nombre </th>
+                <th>Estado </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr mdbTableCol *ngFor="let el of user">
+                <td>{{el.userName}}</td>
+                <td>{{el.state == 1 ? 'Activado' : 'Inabilitado'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>

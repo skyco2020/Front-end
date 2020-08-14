@@ -1,0 +1,15 @@
+<input type="button" class="btnadd" value="Agregar cantante" routerLink='/addsinger'>
+<table mdbTable>
+    <thead class="thead">
+        <tr>
+            <th>Nombre </th>
+            <th>Estado </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr mdbTableCol *ngFor="let el of singers">
+            <td>{{el.name}}</td>
+            <td>{{el.state == 1 ? 'Activado' : 'Inabilitado'}}</td>
+        </tr>
+    </tbody>
+</table>
