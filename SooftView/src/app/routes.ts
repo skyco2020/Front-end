@@ -43,4 +43,7 @@ export const appRoutes: Routes = [
     {
         path: 'about', component: AboutComponent,
     },
+    {
+      path : '', redirectTo: '/login', pathMatch : 'full'
+    }
   ];
