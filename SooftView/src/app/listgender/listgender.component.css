@@ -16,3 +16,16 @@
     color: #EF7F1A!important;
     border-radius: .9rem;
 }
+
+.btncancel {
+    background: #17a2b8!important;
+    border: none;
+    float: right;
+    height: 3rem;
+    color: #ffffff;
+    border-radius: .5rem;
+    margin-left: .7em;
+    width: 14em;
+    margin-bottom: .4em;
+    margin-top: .1em;
+}

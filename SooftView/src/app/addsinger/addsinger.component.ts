@@ -3,6 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import {Singer} from '../Classes/singer';
 import { Router } from '@angular/router';
 import {SingerService} from '../services/singer.service';
+
 declare var $: any;
 
 @Component({
@@ -11,7 +12,7 @@ declare var $: any;
   styleUrls: ['./addsinger.component.css']
 })
 export class AddsingerComponent implements OnInit {
-  usr = new Singer();
+  singer = new Singer();
   errorcreate: any;
   singers: any;
   public load: boolean;
@@ -22,44 +23,31 @@ export class AddsingerComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  CreateUser(UserName, Password, confirm){
+  CreateUser(SingerName){
 
-    if (UserName === '' || UserName === null || UserName === undefined) {
-      $('.error_username').html('Ingresa nombre usuario');
-      return false;
-    } else if (Password === '' || Password === null || Password === undefined) {
-      $('.error_password').html('Ingresa contraseña del usuario');
-      return false;
-    }
-    else if (confirm === '' || confirm === null || confirm === undefined) {
-      $('.error_confpassword').html('Confirmar contraseña del usuario');
-      return false;
-    }
-    else if (confirm !==  Password) {
-      $('.error_confpassword').html('Contraseña diferente');
+    if (SingerName === '' || SingerName === null || SingerName === undefined) {
+      $('.error_username').html('Ingresa nombre del cantante');
       return false;
     }
     else {
-      // this.usr = new User();
-      // this.usr.creationDate = new Date();
-      // this.usr.finalDate = new Date();
-      // this.usr.userName = UserName,
-      // this.usr.userPass = Password,
-      // this.usr.state = 1;
+      // this.singer = new Singer();
+      this.singer.Name = SingerName,
+      this.singer.state = 1;
 
-      this.singerser.Post(this.usr)
+      this.singerser.Post(this.singer)
       .subscribe((data: any) => {
-        this.messegeexitos = 'El usuario fue dado de alta con el codigo de exito ' + data + '\n En breve se rediccionara a la pagina principal',
+        this.messegeexitos = 'El cantante fue dado de alta con el codigo de exito ' + data + '\n En breve se rediccionara a la pagina principal',
         this.LoadCreate(true);
         this.LoadDataObject();
       },
         (err: HttpErrorResponse) => {
-          if(err.error.ExceptionMessage === 'Ya existe un usuario con ese nombre"')
+          debugger;
+          if (err.error.ExceptionMessage === '400')
           {
-            this.errorcreate = 'Ya existe un usuario con ese nombre"';
+            this.errorcreate = 'Ya existe un cantante con ese nombre';
           }
           else{
-            this.errorcreate = 'No se puede crear el usuario';
+            this.errorcreate = 'No se puede crear el cantante';
           }
         });
     }
@@ -77,7 +65,7 @@ export class AddsingerComponent implements OnInit {
    LoadDataObject(){
     setTimeout(() => {
       this.LoadCreate(false);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/listsinger']);
     }, 5000);
    }
 }

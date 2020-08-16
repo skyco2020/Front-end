@@ -1,1 +1,25 @@
-<p>addsong works!</p>
+<div class="container ">
+
+    <div class="abs-center ">
+        <form id="formulario" class="border p-3 form">
+            <h2 class="center bg-cover tit">Agregar Canción</h2>
+            <div class="form-group ">
+                <label for="text">Nombre De la cancion</label>
+                <input type="text" #SingerName name="UserName" id="username" placeholder="Nombre canción" required class="form-control" (click)="HideMessage('error_username')">
+                <span class="red-text error_username"></span>
+            </div>
+            <span class="red-text">{{errorcreate}}</span>
+            <button type="button" class="btnadd" (click)="CreateUser(SingerName.value)"><i class="fa fa-plus" aria-hidden="true"></i>Guardar</button>
+            <input type="button" value="Cancelar" routerLink="/listsinger" class="btncancel">
+            <br>
+            <div class="overlay" *ngIf="load">
+
+                <div class="spinner ">
+                    <h3>{{messegeexitos}}</h3>
+                    <img class="imgsp" src="../../assets/img/giphyloadinf.webp" />
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

@@ -53,7 +53,7 @@ export class AddgenderComponent implements OnInit {
         this.LoadDataObject();
       },
         (err: HttpErrorResponse) => {
-          if(err.error.ExceptionMessage === 'Ya existe un genero con ese nombre"')
+          if(err.error.ExceptionMessage === '400')
           {
             this.errorcreate = 'Ya existe un genero con ese nombre"';
           }

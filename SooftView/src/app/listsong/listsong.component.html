@@ -1,1 +1,15 @@
-<p>listsong works!</p>
+<input type="button" class="btnadd" routerLink='/addsong' value="Agregar canción">
+<table mdbTable>
+    <thead class="thead">
+        <tr>
+            <th>Nombre </th>
+            <th>Estado </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr mdbTableCol *ngFor="let el of songs">
+            <td>{{el.name}}</td>
+            <td>{{el.state == 1 ? 'Activado' : 'Inabilitado'}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -26,5 +26,7 @@ export class ListsingerComponent implements OnInit {
         }
       });
   }
+  AddCenderSong(idSinger){
 
+  }
 }

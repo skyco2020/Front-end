@@ -5,10 +5,10 @@
             <h2 class="center bg-cover tit">Agregar Cantante</h2>
             <div class="form-group ">
                 <label for="text">Nombre Del cantante</label>
-                <input type="text" #UserName name="UserName" id="username" placeholder="Nombre Usuario" required class="form-control" (click)="HideMessage('error_username')">
+                <input type="text" #SingerName name="UserName" id="username" placeholder="Nombre cantante" required class="form-control" (click)="HideMessage('error_username')">
                 <span class="red-text error_username"></span>
             </div>
-            <div class="form-group ">
+            <!-- <div class="form-group ">
                 <div class="col-12">
                     <label class="col-3">Genero musica</label>
                     <select class="custom-select col-5">
@@ -29,10 +29,10 @@
                   <option value="3">Three</option>
                 </select>
                 </div>
-            </div>
+            </div> -->
             <span class="red-text">{{errorcreate}}</span>
-            <input type="button" value="Guardar" class="btnadd" (click)="CreateUser(UserName.value,0,0)">
-            <input type="button" value="Cancelar" routerLink="/home" class="btncancel">
+            <button type="button" class="btnadd" (click)="CreateUser(SingerName.value)"><i class="fa fa-plus" aria-hidden="true"></i>Guardar</button>
+            <input type="button" value="Cancelar" routerLink="/listsinger" class="btncancel">
             <br>
             <div class="overlay" *ngIf="load">
 
