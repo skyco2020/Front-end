@@ -21,7 +21,7 @@ export class AddsongComponent implements OnInit {
   CreateUser(SingerName){
 
     if (SingerName === '' || SingerName === null || SingerName === undefined) {
-      $('.error_username').html('Ingresa nombre del cantante');
+      $('.error_username').html('Ingresa nombre de la cancion');
       return false;
     }
     else {
@@ -41,7 +41,7 @@ export class AddsongComponent implements OnInit {
           debugger;
           if (err.error.ExceptionMessage === '400')
           {
-            this.errorcreate = 'Ya existe un cantante con ese nombre';
+            this.errorcreate = 'Ya existe una cancion con ese nombre';
           }
           else{
             this.errorcreate = 'No se puede crear el cantante';
@@ -62,7 +62,7 @@ export class AddsongComponent implements OnInit {
    LoadDataObject(){
     setTimeout(() => {
       this.LoadCreate(false);
-      this.router.navigate(['/listssong']);
+      this.router.navigate(['/listsong']);
     }, 5000);
    }
 }
