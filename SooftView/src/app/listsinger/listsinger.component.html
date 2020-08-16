@@ -14,9 +14,7 @@
             <td>{{el.Name}}</td>
             <td>{{el.state == 1 ? 'Activado' : 'Baja'}}</td>
             <td><i class="fa fa-list" aria-hidden="true" title="ver detalle" style="cursor: pointer;">Ver detalle</i></td>
-
-
-            <button class="fa fa-plus btnaddgencan" aria-hidden="true" title="Agregar Genero y cancion" (click)="AddCenderSong(el.idSinger)"> Agregar</button>
+            <button class="fa fa-plus btnaddgencan" aria-hidden="true" title="Agregar Genero y cancion" routerLink='/addgendersong/{{el.idSinger}}'> Agregar</button>
         </tr>
     </tbody>
 </table>

@@ -1,1 +1,45 @@
-<p>addgendersong works!</p>
+<div class="container ">
+
+    <div class="abs-center ">
+        <form id="formulario" class="border p-3 form">
+            <h2 class="center bg-cover tit">Agregar genero canción</h2>
+            <div class="form-group ">
+                <label for="text">Nombre Del cantante</label>
+                <input type="text" #SingerName name="UserName" id="username" value="{{id}}" placeholder="Nombre cantante" required class="form-control" (click)="HideMessage('error_username')">
+                <span class="red-text error_username"></span>
+            </div>
+            <div class="form-group ">
+                <div class="col-12">
+                    <label class="col-3">Genero musica</label>
+                    <select class="custom-select col-5">
+                  <option selected="">Seleccionar un genero</option>
+                  <option *ngFor="let el of genders" value={{el.idGender}}>{{el.name}}</option>
+                </select>
+                </div>
+            </div>
+            <div class="form-group ">
+                <div class="col-12">
+                    <label class="col-3">Cancion</label>
+                    <select class="custom-select col-5">
+                  <option selected="">Seleccionar una cancion</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                </div>
+            </div>
+            <span class="red-text">{{errorcreate}}</span>
+            <button type="button" class="btnadd" (click)="CreateUser(SingerName.value)"><i class="fa fa-plus" aria-hidden="true"></i>Guardar</button>
+            <input type="button" value="Cancelar" routerLink="/listsinger" class="btncancel">
+            <br>
+            <div class="overlay" *ngIf="load">
+
+                <div class="spinner ">
+                    <h3>{{messegeexitos}}</h3>
+                    <img class="imgsp" src="../../assets/img/giphyloadinf.webp" />
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
