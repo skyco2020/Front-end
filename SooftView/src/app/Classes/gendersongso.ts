@@ -1,6 +1,7 @@
 export class Gendersong {
-    idUser: number;
+    idSong: number;
     idGender: number;
+    idSinger: number;
     idGenderSonf: number;
     state: number;
 }

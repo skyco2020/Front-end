@@ -1,5 +1,17 @@
 <input type="button" class="btnadd" value="Agregar generó" routerLink='/addgender'>
 <input type="button" class="btnretun" routerLink='/home' value="Volver al menu">
+
+<div class="col-10" style="display: flex;">
+    <label class="col-2">Filtrar: </label>
+    <div class="col-4">
+        <input type="text" class="txtsearch">
+    </div>
+    <div class="col-3">
+        <input type="button" class="btnadd" value="Buscar" (click)="Search();">
+    </div>
+    
+</div>
+
 <table mdbTable>
     <thead class="thead">
         <tr>

@@ -1,0 +1,23 @@
+.btnadd {
+    background: #EF7F1A!important;
+    border: none;
+    float: right;
+    height: 3rem;
+    color: #ffffff;
+    border-radius: .5rem;
+    margin-left: .7em;
+    width: 14em;
+    margin-bottom: .4em;
+    margin-top: .1em;
+}
+.btnaddgencan {
+    background: #EF7F1A!important;
+    border: none;
+    height: 3rem;
+    color: #ffffff;
+    border-radius: .5rem;
+    margin-left: .7em;
+    width: 14em;
+    margin-bottom: .4em;
+    margin-top: .1em;
+}

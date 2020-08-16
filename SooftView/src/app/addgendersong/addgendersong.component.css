@@ -58,7 +58,9 @@ span {
     margin-left: .7em;
     width: 8em;
 }
-
+routerLink{
+    cursor: pointer;
+}
 .btncancel {
     background: #dc3545!important;
     border: none;

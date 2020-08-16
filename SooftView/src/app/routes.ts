@@ -11,6 +11,7 @@ import { ListsingerComponent } from './listsinger/listsinger.component';
 import { ListsongComponent } from './listsong/listsong.component';
 import { ListgenderComponent } from './listgender/listgender.component';
 import { AddgendersongComponent } from './addgendersong/addgendersong.component';
+import { DetailsingerComponent } from './detailsinger/detailsinger.component';
 // import { AuthGuard } from './auth/auth.guard';
 
 export const appRoutes: Routes = [
@@ -46,6 +47,9 @@ export const appRoutes: Routes = [
     },
     {
         path: 'addgendersong/:idSinger', component: AddgendersongComponent,
+    },
+    {
+        path: 'detailsinger/:idSinger', component: DetailsingerComponent,
     },
     {
       path : '', redirectTo: '/login', pathMatch : 'full'

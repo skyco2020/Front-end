@@ -4,6 +4,8 @@ import {Song} from '../Classes/song';
 import { Router } from '@angular/router';
 import {SongService} from '../services/song.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-listsong',
   templateUrl: './listsong.component.html',
@@ -26,5 +28,15 @@ export class ListsongComponent implements OnInit {
         }
       });
   }
-
+  Search(){
+    debugger;
+    let txt = $('.txtsearch').val();
+    const filter = '?state=1'+ "&search="+ txt;
+    this.singerser.GetAll(filter).
+      subscribe((data: any) => {
+        if(data !== null){
+          this.songs = data;
+        }
+      });
+  }
 }

@@ -1,1 +1,20 @@
-<p>detailsinger works!</p>
+<input type="button" class="btnretun" routerLink='/listsinger' value="Volver al menu">
+<h2 class="center bg-cover tit">Nombre Cantante: {{singer.Name}}</h2>
+<table mdbTable>
+    <thead class="thead">
+        <tr>
+            <th>Cancion </th>
+            <th>Genero </th>
+            <th>Fecha creación </th>
+            <th>Estado </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr mdbTableCol *ngFor="let el of SingerGenders">
+            <td>{{el.song.name}}</td>
+            <td>{{el.Genders.name}}</td>
+            <td>{{el.Genders.creationDate}}</td>
+            <td>{{el.state == 1 ? 'Activado' : 'Baja'}}</td>           
+        </tr>
+    </tbody>
+</table>

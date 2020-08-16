@@ -1,5 +1,18 @@
+
 <input type="button" class="btnadd" value="Agregar cantante" routerLink='/addsinger'>
 <input type="button" class="btnretun" routerLink='/home' value="Volver al menu">
+
+<div class="col-10" style="display: flex;">
+    <label class="col-2">Filtrar: </label>
+    <div class="col-4">
+        <input type="text" class="txtsearch">
+    </div>
+    <div class="col-3">
+        <input type="button" class="btnadd" value="Buscar" (click)="Search();">
+    </div>
+    
+</div>
+
 <table mdbTable>
     <thead class="thead">
         <tr>
@@ -13,7 +26,7 @@
         <tr mdbTableCol *ngFor="let el of singers">
             <td>{{el.Name}}</td>
             <td>{{el.state == 1 ? 'Activado' : 'Baja'}}</td>
-            <td><i class="fa fa-list" aria-hidden="true" title="ver detalle" style="cursor: pointer;">Ver detalle</i></td>
+            <td><i class="fa fa-list" aria-hidden="true" title="ver detalle" style="cursor: pointer;" routerLink='/detailsinger/{{el.idSinger}}'>Ver detalle</i></td>
             <button class="fa fa-plus btnaddgencan" aria-hidden="true" title="Agregar Genero y cancion" routerLink='/addgendersong/{{el.idSinger}}'> Agregar</button>
         </tr>
     </tbody>

@@ -4,6 +4,8 @@ import {Gender} from '../Classes/gender';
 import { Router } from '@angular/router';
 import {GenderService} from '../services/gender.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-listgender',
   templateUrl: './listgender.component.html',
@@ -26,5 +28,14 @@ export class ListgenderComponent implements OnInit {
         }
       });
   }
-
+  Search(){
+    let txt = $('.txtsearch').val();
+    const filter = '?state=1'+ "&search="+ txt;
+    this.genderser.GetAll(filter).
+      subscribe((data: any) => {
+        if(data !== null){
+          this.singers = data;
+        }
+      });
+  }
 }

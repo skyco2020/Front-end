@@ -4,6 +4,8 @@ import {Singer} from '../Classes/singer';
 import { Router } from '@angular/router';
 import {SingerService} from '../services/singer.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-listsinger',
   templateUrl: './listsinger.component.html',
@@ -26,7 +28,14 @@ export class ListsingerComponent implements OnInit {
         }
       });
   }
-  AddCenderSong(idSinger){
-
+  Search(){
+    let txt = $('.txtsearch').val();
+    const filter = '?state=1'+ "&search="+ txt;
+    this.singerser.GetAll(filter).
+      subscribe((data: any) => {
+        if(data !== null){
+          this.singers = data;
+        }
+      });
   }
 }
