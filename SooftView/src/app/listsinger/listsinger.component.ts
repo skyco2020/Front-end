@@ -18,7 +18,7 @@ export class ListsingerComponent implements OnInit {
   constructor(private singerser: SingerService, private router: Router) { }
 
   ngOnInit(): void {
-    const filter = '?count=1';
+    const filter = '?state=1';
     this.singerser.GetAll(filter).
       subscribe((data: any) => {
         if(data !== null){

@@ -18,7 +18,7 @@ export class ListgenderComponent implements OnInit {
   public load: boolean;
   messegeexitos: any;
   ngOnInit(): void {
-    const filter = '?count=1';
+    const filter = '?state=1';
     this.genderser.GetAll(filter).
       subscribe((data: any) => {
         if(data !== null){

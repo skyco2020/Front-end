@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private userService: TaskService, private router: Router) { }
 
   ngOnInit() {
-    const filter = '?count=1';
+    const filter = '?state=1';
     this.userService.GetAll(filter).
       subscribe((data: any) => {
         if(data !== null){
