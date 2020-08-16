@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Singer} from '../classes/singer';
-// import {GenderSong} from '../classes/gendersong';
+import {Gendersong} from '../classes/gendersong';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,8 @@ export class SingerService {
     const conect = `${this.url}`;
     return this.http.post(conect, user);
   }
-  // PostGenderSong(user: GenderSong){
-  //   const conect = `${this.url}/AddGenderSong`;
-  //   return this.http.post(conect, user);
-  // }
+  PostGenderSong(user: Gendersong){
+    const conect = `${this.url}/AddGenderSong`;
+    return this.http.post(conect, user);
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-// import {GenderSong} from '../Classes/gendersong';
+import {Gendersong} from '../Classes/gendersong';
 import { Router,ActivatedRoute, Params } from '@angular/router';
 import {SingerService} from '../services/singer.service';
 import {GenderService} from '../services/gender.service';
@@ -13,7 +13,7 @@ declare var $: any;
   styleUrls: ['./addgendersong.component.css']
 })
 export class AddgendersongComponent implements OnInit {
-  // gendersong = new GenderSong();
+  gendersong = new Gendersong();
   errorcreate: any;
   genders: any;
   public load: boolean;
@@ -34,25 +34,25 @@ export class AddgendersongComponent implements OnInit {
     }
     else {
       // this.singer = new Singer();
-      // this.gendersong.idGender = SingerName,
-      // this.gendersong.state = 1;
+      this.gendersong.idGender = SingerName,
+      this.gendersong.state = 1;
 
-      // this.singerser.PostGenderSong(this.gendersong)
-      // .subscribe((data: any) => {
-      //   this.messegeexitos = 'El cantante fue dado de alta con el codigo de exito ' + data + '\n En breve se rediccionara a la pagina principal',
-      //   this.LoadCreate(true);
-      //   this.LoadDataObject();
-      // },
-      //   (err: HttpErrorResponse) => {
-      //     debugger;
-      //     if (err.error.ExceptionMessage === '400')
-      //     {
-      //       this.errorcreate = 'Ya existe un cantante con ese nombre';
-      //     }
-      //     else{
-      //       this.errorcreate = 'No se puede crear el cantante';
-      //     }
-      //   });
+      this.singerser.PostGenderSong(this.gendersong)
+      .subscribe((data: any) => {
+        this.messegeexitos = 'El cantante fue dado de alta con el codigo de exito ' + data + '\n En breve se rediccionara a la pagina principal',
+        this.LoadCreate(true);
+        this.LoadDataObject();
+      },
+        (err: HttpErrorResponse) => {
+          debugger;
+          if (err.error.ExceptionMessage === '400')
+          {
+            this.errorcreate = 'Ya existe un cantante con ese nombre';
+          }
+          else{
+            this.errorcreate = 'No se puede crear el cantante';
+          }
+        });
     }
   }
 

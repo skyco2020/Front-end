@@ -30,11 +30,13 @@
     margin-bottom: .4em;
     margin-top: .1em;
 }
+
 .thead {
     background-color: #000!important;
     color: #EF7F1A!important;
     border-radius: .9rem;
 }
+<<<<<<< HEAD
 
 .btncancel {
     background: #dc3545!important;
@@ -67,3 +69,5 @@
 .imgsp {
     opacity: .5;
 }
+=======
+>>>>>>> c93625d0ae20ecaa1d0d17f5d3fe026d584e7e72
